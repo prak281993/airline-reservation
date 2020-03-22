@@ -8,7 +8,7 @@ import { withRouter } from 'react-router-dom';
 function FlightDetails(props) {
     const { tripType, source, destination, numberOfSeats, departure, returning } = props.location.state;
     const [foundFlights, setFoundFlights] = useState([]);
-    const [finalFoundFlight,setFinalFoundFlights]=useState([]);
+    const [finalFoundFlight, setFinalFoundFlights] = useState([]);
 
     useEffect(() => {
         const searchedFlight = allFlights.filter(searchFlights);
@@ -154,31 +154,34 @@ function FlightDetails(props) {
     }
 
     return (
-        // <div className="bg-video">
-        //     <video autoPlay loop muted className="bg-video__content">
-        //         <source src="/images/bg-video.mp4" type="video/mp4" />
-        //         <source src="/images/bg-video.webm" type="video/webm" />
-        //                         Your browser does not support this video
-        //                         </video>
-        // </div>
         <section className="flight-details">
             <div className="container">
                 <div className="row">
                     <div className="col-lg-3 col-md-4 col-sm-12 col-12">
                         <Filter filterValues={getFilterValues} />
                     </div>
-                    {
-                        (foundFlights && foundFlights.length > 0) ?
-                            <div className="col-lg-9 col-md-8 col-sm-12 col-12">
+                    <div className="col-lg-9 col-md-8 col-sm-12 col-12">
+                        {
+                            (foundFlights && foundFlights.length > 0) ?
                                 <section className="flight-details__section">
                                     <SortComponent sortBy={sortBy} />
                                     {
                                         foundFlights.map((flight, index) => <SingleFlight key={index + '-' + flight.Airline} flightData={flight} />)
                                     }
                                 </section>
-                            </div> :
-                            null
-                    }
+                                :
+                                <div className="bg-video">
+                                    <div className="no-data-found">
+                                        <h1>No Flights Found</h1>
+                                    </div>
+                                    <video autoPlay loop muted className="bg-video__content">
+                                        <source src="/images/bg-video.mp4" type="video/mp4" />
+                                        <source src="/images/bg-video.webm" type="video/webm" />
+                                Your browser does not support this video
+                                </video>
+                                </div>
+                        }
+                    </div>
                 </div>
             </div>
         </section>
