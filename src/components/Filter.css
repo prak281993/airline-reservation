@@ -1,0 +1,86 @@
+.filters{
+    background: rgba(255,255,255,0.2);
+}
+
+.filter-item {
+    margin-bottom:2rem;
+    width: 100%;
+}
+
+.filter-item .filter-header {
+    color: #fff;
+}
+
+.slider {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 10px;
+    border-radius: 5px;
+    background: rgb(216, 211, 211);
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    -webkit-transition: 0.2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgb(63, 192, 23);
+}
+
+.slide-container .range-values {
+    display: flex;
+    justify-content: space-between;
+}
+
+.slide-container .range-values .values {
+    color: #fff;
+    font-size: 14px;
+}
+
+.filter-item .checkbox-item{
+    display: flex;
+    align-items: center;
+}
+
+.filter-item .checkbox-item > *{
+    margin-left:10px;
+}
+
+.filter-item .checkbox-item__heading{
+    color: #fff;
+}
+
+.filter-item .checkbox-item .airline-logo img{
+    width:25px;
+    height:25px;
+    border-radius: 50%;
+}
+
+.departure-filter{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.departure-filter > span{
+    flex: 0 50%;
+}
+
+.arrival-filter{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.arrival-filter > span{
+    flex: 0 50%;
+    box-sizing: border-box;
+}

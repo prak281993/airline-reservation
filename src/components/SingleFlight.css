@@ -1,0 +1,138 @@
+.flight-details__card {
+    margin-top: 2rem;
+    background: #fff;
+    border: 1px solid #e9eaed;
+    border-radius: 2px;
+}
+
+.flight-details__card .allcolumns {
+    padding: 20px;
+}
+
+.flight-details__card .flight-logo {
+    display: flex;
+    align-items: center;
+}
+
+.flight-details__card .flight-logo img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.flight-details__card .flight-time span:first-child {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 15px;
+}
+
+.flight-details__card .flight-time span:nth-child(2) {
+    font-size: 14px;
+    color: #999;
+}
+
+.flight-details__card .flight-score {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 10px 0px 10px;
+    color: #666;
+    position: relative;
+}
+
+.flight-details__card .flight-info {
+    font-size: 14px;
+    line-height: 15px;
+    color: #999;
+    font-weight: 800;
+}
+
+.flight-details__card .flight-price {
+    font-size: 22px;
+    line-height: 15px;
+    color: rgb(11, 196, 66);
+    font-weight: 800;
+}
+
+.flight-details__card .flight-2 {
+    text-align: right;
+}
+
+.flight-details__card .flight-score .flight-name {
+    font-size: 12px;
+    display: block;
+    font-weight: 600;
+    line-height: 12px;
+}
+
+.flight-details__card .flight-score .flight-runs {
+    font-size: 14px;
+    display: block;
+}
+
+.flight-details__card .flight-score .flight-over {
+    line-height: 1;
+    margin-top: 1px;
+    display: block;
+    font-size: 12px;
+}
+
+.flight-details__card .allcolumns button {
+    filter: brightness(150%);
+    font-weight: bold;
+}
+
+.flight-details__card .allcolumns button:hover {
+    filter: contrast(200%);
+    color: inherit;
+}
+
+.flight-details__card .flight-summary {
+    align-items: center;
+    text-align: center;
+    padding: 20px 20px;
+}
+
+@media(min-width:1000px) and (min-width:1024px) {
+    .flight-details__card .allcolumns button {
+        font-size: 14px;
+    }
+}
+
+@media(min-width:988px) and (max-width:1000px) {
+    .flight-details__card .flight-teams, .flight-details__card .allcolumns span, .flight-details__card .allcolumns button {
+        font-size: 12px;
+    }
+}
+
+@media(min-width:600px) and (max-width:988px) {
+    .flight-details__card .allcolumns {
+        padding: 10px;
+    }
+    .flight-details__card .flight-teams, .flight-details__card .allcolumns span, .flight-details__card .allcolumns button {
+        font-size: 18px;
+        text-align: center;
+    }
+    .flight-details__card .flight-summary {
+        align-items: center;
+        text-align: center;
+    }
+    .flight-details__card .flight-summary button {
+        font-size: 14px;
+        width: 80%;
+        padding: 10px 10px;
+    }
+}
+
+@media(max-width:600px) {
+    .flight-details__card .allcolumns {
+        padding: 10px;
+    }
+    .flight-details__card .flight-price>* {
+        font-size: 18px;
+    }
+    .flight-details__card .flight-summary button {
+        font-size: 14px;
+        width: 100%;
+        padding: 10px 10px;
+    }
+}

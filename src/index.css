@@ -1,13 +1,315 @@
-body {
+*, *::after {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato" sans-serif;
+  box-sizing: border-box;
+  height: 100vh;
+  background-image: linear-gradient(to right bottom, rgba(40, 180, 94, 0.6), rgba(126, 213, 111, 0.6)), url("/images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  background-attachment: fixed;
+}
+
+.main .header__logo-box {
+  display: flex;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.main .header__logo-box .header__logo {
+  height: 4.5rem;
+}
+
+.main .header__logo-box .header__text {
+  margin-left: 10px;
+  text-transform: uppercase;
+  background-image: linear-gradient(to right, rgba(40, 180, 94, 0.8), rgba(126, 213, 111, 0.9));
+  -webkit-background-clip: text;
+  color: transparent;
+  font-family: Snell Roundhand, cursive;
+  text-shadow: 0 0 2px #8ff1b5, 0 0 3px #5bbb80;
+}
+
+.section-book {
+  padding: 10rem 0 0 0;
+  max-width: 115rem;
+  margin: 0 auto;
+}
+
+.section-book .book {
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 50%, transparent 50%);
+  background-size: 100%;
+  height: 50rem;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+}
+
+.section-book .composition {
+  height: 50rem;
+  transform: translateY(25%);
+}
+
+.section-book .composition__photo {
+  width: 50%;
+  box-shadow: 0 1.5rem 4rem rgba(#000, 0.4);
+  border-radius: 2px;
+  position: absolute;
+  transition: all 0.2s;
+  outline-offset: 0.8rem;
+}
+
+.section-book .composition__photo--p1 {
+  left: 10%;
+  top: -2rem;
+}
+
+.section-book .composition__photo--p2 {
+  right: 0;
+  top: 2rem;
+}
+
+.section-book .composition__photo--p3 {
+  left: 30%;
+  top: 10rem;
+}
+
+.section-book .composition__photo:hover {
+  outline: 0.8rem solid rgba(40, 180, 94, 0.8);
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 2.5rem 4rem rgba(#000, 0.5);
+  z-index: 20;
+}
+
+.section-book .book .book__form {
+  width: 100%;
+  padding: 4rem;
+  position: relative;
+}
+
+.section-book .book .book__form .form {
+  position: absolute;
+}
+
+.section-book .book .book__form .journey__dates {
+  display: flex;
+  justify-content: space-between;
+}
+
+.book__form .form .form__input {
+  font-size: 1.5rem;
+  font-family: inherit;
+  padding: 1.25rem 1.75rem;
+  color: inherit;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-bottom: 3px solid transparent;
+  width: 100%;
+  display: block;
+}
+
+.book__form .form .form__group--half {
+  width: 45%;
+}
+
+.book__form .form .form__group--half .form__input {
+  font-size: 1.5rem;
+  font-family: inherit;
+  padding: 1.25rem 1.75rem;
+  width: 100%;
+}
+
+.book__form .form .form__group--half .disabled {
+  background: #b2b3b4;
+  cursor: not-allowed;
+}
+
+.book__form .form .form__input:focus {
+  outline: none;
+  border-bottom: 3px solid rgb(7, 187, 22);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.book__form .form .form__input:focus:invalid {
+  border-bottom: 3px solid rgb(211, 13, 6);
+}
+
+.book__form .form .form__input:-webkit-input-placeholder {
+  color: #777;
+}
+
+.book__form .form .form__label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-top: 0.7rem;
+  display: block;
+  transition: all 0.3s;
+}
+
+.book__form .form .form__input:placeholder-shown+.form__label {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-4rem);
+}
+
+.book__form .form .form__radio-input {
+  display: none;
+}
+
+.book__form .form .form__radio-group {
+  width: 49%;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.book__form .form .form__radio-label {
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 4.5rem;
+}
+
+.book__form .form .form__radio-label .form__radio-button {
+  height: 3rem;
+  width: 3rem;
+  border: 6px solid rgba(40, 180, 94);
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: -0.5rem;
+}
+
+.book__form .form .form__radio-label .form__radio-button::after {
+  content: "";
+  display: block;
+  height: 1.3rem;
+  width: 1.3rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(40, 180, 94);
+  opacity: 0;
+  transition: opacity .2s;
+}
+
+.book__form .form .form__radio-input:checked~.form__radio-label .form__radio-button::after {
+  opacity: 1;
+}
+
+.book__form .form .form__group--button .btn {
+  background: rgba(40, 180, 94);
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  margin-top: 2rem;
+  padding: 1.25rem 1.75rem;
+  width: 100%;
+  font-size: 20px;
+  color: #fff;
+}
+
+.flight-details {
+  padding: 10rem 0;
+  position: relative;
+}
+
+.flight-details .bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 0.2;
+}
+
+.flight-details .bg-video__content {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.flight-details__section {
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+.flight-details__section .desktop {
+  display: flex;
+}
+
+.flight-details__section .mobile {
+  display: none;
+}
+
+.sort-headers {
+  display: flex;
+  align-items: center;
+}
+
+.sort-headers>* {
+  color: #fff;
+}
+
+.sort-headers>*:hover {
+  cursor: pointer;
+  color: rgb(2, 80, 21);
+  font-weight: bold;
+}
+
+@media(min-width:850px) and (max-width:950px) {}
+
+@media(min-width:600px) and (max-width:850px) {
+  .section-book {
+    padding: 10rem 0 0 0;
+    max-width: 70rem;
+    margin: 0 auto;
+  }
+  .section-book .book {
+    background-image: none;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+  }
+  .section-book .book .book__form .form {
+    margin-left: auto;
+  }
+  .section-book .composition {
+    display: none;
+  }
+  .flight-details__section .mobile .sort-headers>* {
+    font-size: 12px;
+  }
+}
+
+@media(max-width:600px) {
+  .flight-details__section {
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    width: 85%
+  }
+  .flight-details__section .desktop {
+    display: none;
+  }
+  .flight-details__section .mobile {
+    display: flex;
+  }
+  .flight-details__section .mobile .sort-headers>* {
+    font-size: 16px;
+  }
 }
