@@ -23,8 +23,8 @@ function FlightDetails(props) {
     }
 
     const searchFlights = (flight) => {
-        return flight.From === source
-            && flight.To === destination
+        return flight.From.toLowerCase() === source.toLowerCase()
+            && flight.To.toLowerCase() === destination.toLowerCase()
             && flight.SeatsAvailable >= parseInt(numberOfSeats);
     }
 
